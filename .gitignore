@@ -1,0 +1,5 @@
+.idea/
+.dart_tool/
+android/gradle/
+android/gradlew
+android/gradlew.bat

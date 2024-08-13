@@ -1,0 +1,45 @@
+group 'com.amazon.flutter_amazonpaymentservices'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://android-sdk.payfort.com" }
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://android-sdk.payfort.com" }
+
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+    dependencies {
+
+        implementation('com.amazon:fortpayment:+:release@aar') {
+            transitive = true
+        }
+    }
+}
